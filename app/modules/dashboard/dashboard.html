@@ -1,0 +1,41 @@
+<div class="list" ng-init="dashBoardInit()">
+	<section class="mainSection">
+    <div class="container main">
+      
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2 >Progress Bar</h2>
+          
+          <div class="barContainer" ng-repeat="bar in data.bars">
+            <span class="percentageText">{{bar.value}}%</span>
+            <div class="progress" >
+              <div class="progress-bar{{bar.type}} progress-bar-striped active" role="progressbar" aria-valuenow="{{bar.value}}" aria-valuemin="0" aria-valuemax="100"
+                style="width:{{bar.value}}%">
+                
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-3">
+          <select class="form-control" ng-model="selectedBar">
+            <option value=""> Please Select</option>}
+            option
+            <option ng-repeat=" b in data.bars" value="{{b.name}}">{{b.name}}</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <button ng-repeat="d in data.buttons" type="button" class="btn btn-default" ng-click="clickButton(d)" >{{d}}</button>
+          
+        </div>
+      </div>
+    
+
+    </div>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+
+<div class="login">
+<img src="assets/images/bgImg.jpg" style="
+    position: absolute;opacity: .2;width: 100%;">	
+</div>
+<div class="login-container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<form class = "login-form" ng-submit="fn_login()">
+				  <div class="form-group" >
+				    <label for="username">Username/Email</label>
+				    <div class="inner-addon">
+				    	<i class="glyphicon glyphicon-user"></i>
+				    	<input type="email" class="form-control" ng-class="{'has-error' : (specificError.email === 'error')}" placeholder="Enter User Name" ng-model="email"/>
+				    </div>
+				    
+				  </div>
+				  <div class="form-group">
+				    <label for="password">Password</label>
+				    <div class="inner-addon">
+				    	<i class="glyphicon glyphicon-lock"></i>
+				    	<input type="password" class="form-control"  ng-class="{'has-error' : (specificError.pass === 'error')}" placeholder="Password" ng-model="password">
+				    </div>
+				  </div>					   
+				  <div class="submit">
+				  	<button type="submit" class="btn btn-primary btn-block active">Sign In<i class="glyphicon glyphicon-circle-arrow-right"></i></button>
+				  	<p class="help">Need Help ?</p>
+				  </div>
+			</form>
+		</div>
+	</div>
+</div>
