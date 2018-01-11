@@ -38,6 +38,8 @@ Install grunt client using ``npm install grunt-cli``
 
 Now to run the application run ``grunt serve``
 
+If it gives error related to `` compass ``	then install compass via `` gem install compass `` then the app will boot up
+
 Here is the app up and running for you!!!
 
 Build the App via `` grunt build ``
@@ -53,5 +55,8 @@ You can check the code coverage by going to the folder `` coverage\PhantomJS(fol
 # Coding style
 
 [Directory Structure ](https://scotch.io/tutorials/angularjs-best-practices-directory-structure#a-better-structure-and-foundation)
+
+##Assumptions:
+ * Login Page to support the login via email and pass, 'b@b.com' and 'b' respectively, which is stored in local storage.
 
 
