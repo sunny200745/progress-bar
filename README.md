@@ -58,5 +58,7 @@ You can check the code coverage by going to the folder `` coverage\PhantomJS(fol
 
 ##Assumptions:
  * Login Page to support the login via email and pass, 'b@b.com' and 'b' respectively, which is stored in local storage.
+ * DashBoard Page is the page where we show the Progress bars(I hope i have met all the requirements)
+
 
 
