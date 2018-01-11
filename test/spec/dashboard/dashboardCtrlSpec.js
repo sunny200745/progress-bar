@@ -5,7 +5,11 @@ describe('Controller: DashboardCtrl', function () {
   // load the controller's module
   beforeEach(module('progressBarApp'));
 
-
+  var data = {
+          "buttons": [15, 21, -42, -16],
+          "bars": [55, 82, 51, 87],
+          "limit": 140
+        };
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $q, $httpBackend, _CommonDatahub_, $location) {
@@ -37,18 +41,18 @@ describe('Controller: DashboardCtrl', function () {
 
     it('should redirect to Dashboard page if user is  Logged in',function(){
       spyOn(CommonDatahub,'getLoggedInDet').and.returnValues(true);
+      spyOn(CommonDatahub,'getData').and.returnValues(data);
       scope.dashBoardInit();
       expect(scope.moduleName).toEqual('dashboard');
     });
-    it('should redirect to garage details', function(){
-      spyOn(location, 'path');
-      var g = {
-        properties : {
-          cdk_id : 'parking.garage.zd.p02.vumc.acta'
-        }
-      };
-      scope.openGarageDetails(g);
-      expect(location.path).toHaveBeenCalledWith('/garage/list/parking.garage.zd.p02.vumc.acta');
+
+
+    
+    it('should do the calculations on the click of buttons',function(){
+      scope.data = data;
+      scope.selectedBar = 'progressBar_1';
+      scope.clickButton(20);
+      expect(scope.data.bars[1].value).toEqual(102);
     });
 
   });
